@@ -1,0 +1,89 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/freelance"
+           xmlns:tns="http://example.com/freelance"
+           elementFormDefault="qualified">
+
+    <xs:element name="getFreelanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getFreelanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="profile" type="tns:FreelanceProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="FreelanceProfile">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telephone" type="xs:string"/>
+            <xs:element name="specialites" type="xs:string"/>
+            <xs:element name="lienLinkedIn" type="xs:string"/>
+            <xs:element name="lienPortfolio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="deleteFreelanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteFreelanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateFreelanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="profile" type="tns:FreelanceProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateFreelanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               targetNamespace="http://numeryx.fr/freelancesoapservice"
+               xmlns:tns="http://numeryx.fr/freelancesoapservice"
+               elementFormDefault="qualified">
+
+        <xs:element name="getFreelanceRequest">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="getFreelanceResponse">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="email" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+    </xs:schema>
+
+</xs:schema>
