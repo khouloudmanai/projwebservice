@@ -32,6 +32,12 @@ input FeedbackInput {
   comment: String
 }
 
+input UserInput {
+  name: String!
+  email: String!
+}
+
 type Mutation {
   addFeedback(feedback: FeedbackInput!): Feedback!
+  addUser(user: UserInput!): User!
 }
