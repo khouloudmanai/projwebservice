@@ -1,0 +1,25 @@
+package numeryx.fr.feedbackgraphql.resolver;
+
+import numeryx.fr.feedbackgraphql.Services.UserInput;
+import numeryx.fr.feedbackgraphql.Services.app_userService;
+
+import numeryx.fr.feedbackgraphql.entity.app_user;
+import org.springframework.stereotype.Component;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.graphql.data.method.annotation.Argument;
+
+@Component
+public class UserMutationResolver {
+
+    private final app_userService userService;
+
+    public UserMutationResolver(app_userService userService) {
+        this.userService = userService;
+    }
+
+    @MutationMapping
+    public app_user addUser(@Argument UserInput user) {
+        return userService.addUser(user);
+    }
+
+}
