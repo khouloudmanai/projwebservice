@@ -1,13 +1,13 @@
-package numeryx.fr.freelancesoapservice;
+package numeryx.fr.feedbackgraphql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FreelanceSoapServiceApplication {
+public class FeedbackGraphql {
 
     public static void main(String[] args) {
-        SpringApplication.run(FreelanceSoapServiceApplication.class, args);
+        SpringApplication.run(FeedbackGraphql.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package numeryx.fr.freelancesoapservice;
+package numeryx.fr.feedbackgraphql;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

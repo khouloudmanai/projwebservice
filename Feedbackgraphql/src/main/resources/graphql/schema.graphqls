@@ -1,0 +1,37 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Feedback {
+  id: ID!
+  user: User!
+  product: Product!
+  rating: Int!
+  comment: String
+  date: String!
+}
+
+type Query {
+  feedbacksByProduct(productId: ID!): [Feedback]!
+  averageRating(productId: ID!): Float!
+  allProducts: [Product]!
+}
+
+input FeedbackInput {
+  userId: ID!
+  productId: ID!
+  rating: Int!
+  comment: String
+}
+
+type Mutation {
+  addFeedback(feedback: FeedbackInput!): Feedback!
+}
