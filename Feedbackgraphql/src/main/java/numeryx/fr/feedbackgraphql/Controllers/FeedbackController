@@ -1,0 +1,24 @@
+package numeryx.fr.feedbackgraphql.Controllers;
+
+
+import numeryx.fr.feedbackgraphql.entity.Feedback;
+import numeryx.fr.feedbackgraphql.repository.FeedbackRepository;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+@Controller
+public class FeedbackController {
+
+    private final FeedbackRepository feedbackRepository;
+
+    public FeedbackController(FeedbackRepository feedbackRepository) {
+        this.feedbackRepository = feedbackRepository;
+    }
+
+    @QueryMapping
+    public List<Feedback> allFeedback() {
+        return feedbackRepository.findAll();
+    }
+}
